@@ -1,0 +1,7 @@
+### Spring 4.2 이전 버전
+GET http://localhost:8080/old/api/publish-event?data=oldData
+Accept: application/json
+
+### Spring 4.2 부터의 버전
+GET http://localhost:8080/new/api/publish-event?data=newData
+Accept: application/json
