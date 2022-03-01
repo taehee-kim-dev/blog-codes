@@ -1,6 +1,5 @@
 package study.fromapplication.service;
 
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import software.amazon.awssdk.regions.Region;
 import software.amazon.awssdk.services.sns.SnsClient;
@@ -9,7 +8,6 @@ import software.amazon.awssdk.services.sns.model.PublishResponse;
 import software.amazon.awssdk.services.sns.model.SnsException;
 import study.fromapplication.dto.PublishSnsTopicRequest;
 
-@Slf4j
 @Service
 public class PublishSnsTopicService {
 
