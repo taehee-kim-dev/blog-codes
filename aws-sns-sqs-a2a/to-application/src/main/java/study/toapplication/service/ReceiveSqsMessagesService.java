@@ -5,6 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import software.amazon.awssdk.regions.Region;
 import software.amazon.awssdk.services.sqs.SqsClient;
+import software.amazon.awssdk.services.sqs.model.DeleteMessageRequest;
 import software.amazon.awssdk.services.sqs.model.Message;
 import software.amazon.awssdk.services.sqs.model.ReceiveMessageRequest;
 import software.amazon.awssdk.services.sqs.model.SqsException;
@@ -21,6 +22,7 @@ public class ReceiveSqsMessagesService {
             ReceiveMessageRequest receiveMessageRequest = getReceiveMessageRequestBy(sqsUrl);
             List<Message> messages = sqsClient.receiveMessage(receiveMessageRequest).messages();
             printMessages(messages);
+            deleteMessages(sqsClient, sqsUrl, messages);
         } catch (SqsException e) {
             System.err.println(e.awsErrorDetails().errorMessage());
             System.exit(1);
@@ -48,5 +50,22 @@ public class ReceiveSqsMessagesService {
             System.out.println(message);
         }
         log.info("Print messages end");
+    }
+
+    public void deleteMessages(SqsClient sqsClient, String queueUrl,  List<Message> messages) {
+        log.info("Delete Messages start!!!");
+        try {
+            for (Message message : messages) {
+                DeleteMessageRequest deleteMessageRequest = DeleteMessageRequest.builder()
+                    .queueUrl(queueUrl)
+                    .receiptHandle(message.receiptHandle())
+                    .build();
+                sqsClient.deleteMessage(deleteMessageRequest);
+            }
+        } catch (SqsException e) {
+            log.error(e.awsErrorDetails().errorMessage());
+            System.exit(1);
+        }
+        log.info("Delete Messages end");
     }
 }
