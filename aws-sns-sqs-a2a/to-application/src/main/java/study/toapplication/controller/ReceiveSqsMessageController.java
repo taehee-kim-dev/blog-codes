@@ -9,7 +9,7 @@ import study.toapplication.service.ReceiveSqsMessagesService;
 @RestController
 public class ReceiveSqsMessageController {
 
-    private ReceiveSqsMessagesService receiveSqsMessagesService;
+    private final ReceiveSqsMessagesService receiveSqsMessagesService;
 
     @GetMapping("/api/v1/sqs/receive-messages")
     public String receive(String sqsUrl) {
