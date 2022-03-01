@@ -7,16 +7,15 @@ import software.amazon.awssdk.services.sqs.SqsClient;
 import software.amazon.awssdk.services.sqs.model.Message;
 import software.amazon.awssdk.services.sqs.model.ReceiveMessageRequest;
 import software.amazon.awssdk.services.sqs.model.SqsException;
-import study.toapplication.dto.ReceiveSqsMessagesRequest;
 
 @Service
 public class ReceiveSqsMessagesService {
 
-    public void receiveMessages(ReceiveSqsMessagesRequest receiveSqsMessagesRequest) {
+    public void receiveMessages(String sqsUrl) {
         SqsClient sqsClient = getSqsClient();
         System.out.println("\nReceive messages start!!");
         try {
-            ReceiveMessageRequest receiveMessageRequest = getReceiveMessageRequestBy(receiveSqsMessagesRequest.getSqsUrl());
+            ReceiveMessageRequest receiveMessageRequest = getReceiveMessageRequestBy(sqsUrl);
             List<Message> messages = sqsClient.receiveMessage(receiveMessageRequest).messages();
             printMessages(messages);
         } catch (SqsException e) {
