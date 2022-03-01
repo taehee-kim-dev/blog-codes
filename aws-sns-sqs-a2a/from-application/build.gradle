@@ -23,8 +23,8 @@ dependencies {
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
 
-    implementation platform('software.amazon.awssdk:bom:2.15.0')
-    implementation 'software.amazon.awssdk:sns'
+    implementation platform('com.amazonaws:aws-java-sdk-bom:1.11.1000')
+    implementation 'com.amazonaws:aws-java-sdk-sns'
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
