@@ -1,0 +1,7 @@
+POST http://localhost:8080/api/v1/sns/publish-topic
+Content-Type: application/json
+
+{
+  "topicArn": "testArn",
+  "message": "Hello, World!"
+}
