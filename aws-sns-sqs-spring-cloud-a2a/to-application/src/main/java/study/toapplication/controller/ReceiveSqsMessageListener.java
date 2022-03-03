@@ -1,13 +1,11 @@
 package study.toapplication.controller;
 
 import io.awspring.cloud.messaging.listener.annotation.SqsListener;
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Component;
 
 @Slf4j
-@RequiredArgsConstructor
-@RestController
+@Component
 public class ReceiveSqsMessageListener {
 
     @SqsListener("taeheekim-sqs.fifo")
