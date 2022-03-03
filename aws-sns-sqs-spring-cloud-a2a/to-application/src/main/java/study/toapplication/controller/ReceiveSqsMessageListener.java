@@ -1,5 +1,6 @@
 package study.toapplication.controller;
 
+import io.awspring.cloud.messaging.listener.SqsMessageDeletionPolicy;
 import io.awspring.cloud.messaging.listener.annotation.SqsListener;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
@@ -8,7 +9,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class ReceiveSqsMessageListener {
 
-    @SqsListener(value = "taeheekim-sqs")
+    @SqsListener(value = "taeheekim-sqs", deletionPolicy = SqsMessageDeletionPolicy.ON_SUCCESS)
     public void receive(String message) {
         log.info("수신한 메시지 : {}", message);
     }
