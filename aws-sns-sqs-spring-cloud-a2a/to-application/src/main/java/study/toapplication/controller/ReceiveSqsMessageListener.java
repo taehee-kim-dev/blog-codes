@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class ReceiveSqsMessageListener {
 
-    @SqsListener("taeheekim-sqs.fifo")
+    @SqsListener(value = "taeheekim-sqs")
     public void receive(String message) {
         log.info("수신한 메시지 : {}", message);
     }
