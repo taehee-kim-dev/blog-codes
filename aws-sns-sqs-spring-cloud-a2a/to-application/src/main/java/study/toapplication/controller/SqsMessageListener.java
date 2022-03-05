@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class SqsMessageListener {
 
-    @SqsListener(value = "taeheekim-sqs.fifo", deletionPolicy = SqsMessageDeletionPolicy.ON_SUCCESS)
+    @SqsListener(value = "${메세지를 수신할 SQS 이름}", deletionPolicy = SqsMessageDeletionPolicy.ON_SUCCESS)
     public void receive(String message) {
         log.info("수신한 메시지 : {}", message);
     }
