@@ -33,6 +33,7 @@ public class PublishSnsTopicService {
     }
 
     private PublishRequest getPublishRequestBy(PublishSnsTopicRequest publishSnsTopicRequest) {
+        log.info("publishSnsTopicRequest = {}", publishSnsTopicRequest);
         if (publishSnsTopicRequest.getFifo()) {
             return new PublishRequest()
                     .withTopicArn(publishSnsTopicRequest.getTopicArn())
