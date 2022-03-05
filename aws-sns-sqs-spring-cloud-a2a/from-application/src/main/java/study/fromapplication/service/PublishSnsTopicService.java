@@ -22,7 +22,7 @@ public class PublishSnsTopicService {
             log.error(e.getMessage());
             System.exit(1);
         }
-        log.info("메세지 전송됨. message = {}", publishSnsTopicRequest.getMessage());
+        log.info("메세지 전송됨. publishSnsTopicRequest = {}", publishSnsTopicRequest);
     }
 
     public AmazonSNS getAmazonSns() {
@@ -33,7 +33,6 @@ public class PublishSnsTopicService {
     }
 
     private PublishRequest getPublishRequestBy(PublishSnsTopicRequest publishSnsTopicRequest) {
-        log.info("publishSnsTopicRequest = {}", publishSnsTopicRequest);
         if (publishSnsTopicRequest.getFifo()) {
             return new PublishRequest()
                     .withTopicArn(publishSnsTopicRequest.getTopicArn())
