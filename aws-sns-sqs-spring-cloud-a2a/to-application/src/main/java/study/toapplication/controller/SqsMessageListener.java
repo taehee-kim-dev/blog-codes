@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 
 @Slf4j
 @Component
-public class ReceiveSqsMessageListener {
+public class SqsMessageListener {
 
     @SqsListener(value = "taeheekim-sqs.fifo", deletionPolicy = SqsMessageDeletionPolicy.ON_SUCCESS)
     public void receive(String message) {
