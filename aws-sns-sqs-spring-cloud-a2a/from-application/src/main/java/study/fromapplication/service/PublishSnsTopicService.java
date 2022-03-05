@@ -33,6 +33,14 @@ public class PublishSnsTopicService {
     }
 
     private PublishRequest getPublishRequestBy(PublishSnsTopicRequest publishSnsTopicRequest) {
+        if (publishSnsTopicRequest.getFifo()) {
+            return new PublishRequest()
+                    .withTopicArn(publishSnsTopicRequest.getTopicArn())
+                    .withMessage(publishSnsTopicRequest.getMessage())
+                    .withMessageGroupId(publishSnsTopicRequest.getMessageGroupId())
+                    .withMessageDeduplicationId(publishSnsTopicRequest.getMessageDeduplicationId());
+
+        }
         return new PublishRequest()
             .withTopicArn(publishSnsTopicRequest.getTopicArn())
             .withMessage(publishSnsTopicRequest.getMessage());
