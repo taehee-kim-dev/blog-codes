@@ -1,2 +1,5 @@
 .idea
-/aws-sns-sqs-spring-cloud-a2a/aws-sns-sqs-a2a.iml
+*.iml
+
+**/.gradle
+**/out
