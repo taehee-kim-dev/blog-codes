@@ -1,0 +1,19 @@
+version: '3.0'
+
+services:
+  localstack:
+    container_name: taeheekim-blog-codes-localstack
+    image: localstack/localstack
+    healthcheck:
+      test: awslocal sns list-topics && awslocal sqs list-queues
+      interval: 3s
+      timeout: 10s
+    environment:
+      - SERVICES=sns,sqs
+      - AWS_ACCESS_KEY_ID=accesskey
+      - AWS_SECRET_ACCESS_KEY=secretkey
+      - AWS_DEFAULT_REGION=ap-northeast-2
+      - HOSTNAME_EXTERNAL=localhost
+      - TMPDIR=/private$TMPDIR
+    ports:
+      - "4566:4566"

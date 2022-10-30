@@ -1,0 +1,23 @@
+### Publish Message To AWS SNS
+POST http://localhost:8080/api/v1/aws/sns/messaging/publish
+Content-Type: application/json
+
+{
+    "data": {
+        "name": "SNS",
+        "nickname": "발송",
+        "age": 11
+    }
+}
+
+### Publish Message To AWS SQS
+POST http://localhost:8080/api/v1/aws/sqs/messaging/publish
+Content-Type: application/json
+
+{
+    "data": {
+        "name": "SQS",
+        "nickname": "발송",
+        "age": 22
+    }
+}

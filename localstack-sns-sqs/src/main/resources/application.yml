@@ -1,0 +1,24 @@
+cloud:
+  aws:
+    region:
+      static: ap-northeast-2
+    stack:
+      auto: false
+    credentials:
+      access-key: accesskey
+      secret-key: secretkey
+
+aws:
+  sns:
+    messaging: LocalMessaging-SNS
+  sqs:
+    messaging:
+      from-SNS: LocalMessaging-SQS-From-SNS
+      only-SQS: LocalMessaging-Only-SQS
+
+logging:
+  level:
+    com:
+      amazonaws:
+        util:
+          EC2MetadataUtils: error

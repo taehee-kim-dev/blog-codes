@@ -21,8 +21,11 @@ repositories {
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
 
-    // https://mvnrepository.com/artifact/io.awspring.cloud/spring-cloud-aws-messaging
-    implementation 'io.awspring.cloud:spring-cloud-aws-messaging:2.4.2'
+    // https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-aws-messaging
+    implementation 'org.springframework.cloud:spring-cloud-starter-aws-messaging:2.2.6.RELEASE'
+    // https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-aws-autoconfigure
+    implementation 'org.springframework.cloud:spring-cloud-aws-autoconfigure:2.2.6.RELEASE'
+
 
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
