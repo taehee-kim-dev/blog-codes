@@ -19,7 +19,7 @@ public class SendMessageRetryWithBackoffPolicyService {
 
     public void run() {
         RetryTemplate retryTemplate = RetryTemplate.builder()
-                .maxAttempts(5) // 최대 재시도 횟수 5회로 설정
+                .maxAttempts(5) // 최대 시도 횟수 5회로 설정
                 .fixedBackoff(3000)
                 .build();
 

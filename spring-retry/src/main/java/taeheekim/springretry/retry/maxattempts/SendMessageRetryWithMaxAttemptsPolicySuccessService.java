@@ -17,7 +17,7 @@ public class SendMessageRetryWithMaxAttemptsPolicySuccessService {
         RetryTemplate retryTemplate = new RetryTemplate();
 
         SimpleRetryPolicy simpleRetryPolicy = new SimpleRetryPolicy();
-        simpleRetryPolicy.setMaxAttempts(5); // 최대 재시도 횟수 5회로 설정
+        simpleRetryPolicy.setMaxAttempts(5); // 최대 시도 횟수 5회로 설정
 
         retryTemplate.setRetryPolicy(simpleRetryPolicy); // RetryTemplate에 SimpleRetryPolicy 세팅
 
