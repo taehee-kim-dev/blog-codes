@@ -1,4 +1,4 @@
-package taeheekim.quartz;
+package taeheekim.quartzdelay;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

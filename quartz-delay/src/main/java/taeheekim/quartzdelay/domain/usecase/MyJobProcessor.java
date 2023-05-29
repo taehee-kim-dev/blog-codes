@@ -1,10 +1,10 @@
-package taeheekim.quartz.domain.usecase;
+package taeheekim.quartzdelay.domain.usecase;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.quartz.*;
 import org.springframework.stereotype.Service;
-import taeheekim.quartz.port.inbound.MyJobStarter;
+import taeheekim.quartzdelay.port.inbound.MyJobStarter;
 
 import java.time.LocalDateTime;
 

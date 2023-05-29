@@ -1,10 +1,10 @@
-package taeheekim.quartz.adapter.inbound;
+package taeheekim.quartzdelay.adapter.inbound;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
-import taeheekim.quartz.port.inbound.MyJobStarter;
+import taeheekim.quartzdelay.port.inbound.MyJobStarter;
 
 @Slf4j
 @RestController

@@ -1,4 +1,4 @@
-package taeheekim.quartz;
+package taeheekim.quartzdelay;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
