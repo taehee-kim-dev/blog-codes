@@ -4,7 +4,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.quartz.*;
 import org.springframework.stereotype.Service;
-import taeheekim.quartzdelay.port.inbound.MyJobStarter;
+import taeheekim.quartzdelay.port.inbound.MyJobAccessor;
 
 import java.time.LocalDateTime;
 
@@ -13,7 +13,7 @@ import static org.quartz.TriggerBuilder.newTrigger;
 @Slf4j
 @Service
 @RequiredArgsConstructor
-public class MyJobProcessor implements MyJobStarter {
+public class MyJobProcessor implements MyJobAccessor {
 
     private final Scheduler scheduler; // Quartz의 스케쥴러를 주입받습니다.
 
